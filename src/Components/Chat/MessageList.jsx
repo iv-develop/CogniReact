@@ -27,6 +27,9 @@ export default function MessageList({chatId, chatObject, userId, onClose, chatMs
             }
         }
     }
+    if (chatObject == null) {
+        return (<></>)
+    }
     let dmUser = chatObject.isDm ? (chatObject.members[0] == userId ? chatObject.members[1] : chatObject.members[0]) : null;
     return (
         <>
